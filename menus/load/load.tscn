@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckew2xom0w1o0"]
+
+[ext_resource type="Script" uid="uid://v3xsv0l3bnhb" path="res://menus/load/load.gd" id="1_rp6j4"]
+[ext_resource type="PackedScene" uid="uid://cddv5mlk0afcs" path="res://ui/startbackground/startbackground.tscn" id="2_7ga72"]
+
+[node name="Load" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rp6j4")
+
+[node name="StartBackground" parent="." instance=ExtResource("2_7ga72")]
+layout_mode = 1
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

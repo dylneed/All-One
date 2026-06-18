@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://co0aw4acqp7qm"]
+
+[ext_resource type="Script" uid="uid://j441qowjgv5x" path="res://menus/start/start.gd" id="1_662lp"]
+[ext_resource type="FontFile" uid="uid://dng0gakhvt5oo" path="res://ui/friz-quadrata.ttf" id="2_3u0aj"]
+[ext_resource type="PackedScene" uid="uid://cddv5mlk0afcs" path="res://ui/startbackground/startbackground.tscn" id="2_viqgv"]
+
+[sub_resource type="Theme" id="Theme_3u0aj"]
+default_font = ExtResource("2_3u0aj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u0aj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v13q4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viqgv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xclbe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blcey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1ikm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wtlv"]
+
+[node name="Start" type="Control" unique_id=727721500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("MarginContainer/ButtonsContainer/QuitButton")
+focus_neighbor_bottom = NodePath("MarginContainer/ButtonsContainer/OptionsButton")
+script = ExtResource("1_662lp")
+
+[node name="StartBackground" parent="." unique_id=72995104 instance=ExtResource("2_viqgv")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1866850118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 43
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 43
+theme_override_constants/margin_bottom = 24
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=1246365220]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_3u0aj")
+theme_override_font_sizes/font_size = 100
+text = "ALL // ONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1541243746]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_3u0aj")
+
+[node name="StartButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=1674033872]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3u0aj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v13q4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xclbe")
+text = "Start"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=1211737232]
+visible = false
+layout_mode = 2
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../CreditsButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3u0aj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v13q4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xclbe")
+text = "Options"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=567433926]
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_blcey")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e1ikm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2wtlv")
+text = "Credits
+"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=1968366859]
+layout_mode = 2
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_blcey")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e1ikm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2wtlv")
+text = "Quit"
+alignment = 0
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

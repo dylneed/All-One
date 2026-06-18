@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://cddv5mlk0afcs"]
+
+[ext_resource type="Script" uid="uid://cmcyfuaybchr8" path="res://ui/startbackground/texture_rect.gd" id="1_odavn"]
+
+[sub_resource type="GDScript" id="GDScript_odavn"]
+script/source = "extends Control
+
+func _on_resized() -> void:
+	var viewport_size = get_viewport_rect().size
+	var title_font_size = int(viewport_size.size[1] * 0.155)
+	$Title.add_theme_font_size_override(\"font_size\", title_font_size)
+"
+
+[sub_resource type="ImageTexture" id="ImageTexture_djb0g"]
+
+[node name="StartBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_odavn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0588235, 0, 0.00784314, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_djb0g")
+expand_mode = 5
+stretch_mode = 6
+script = ExtResource("1_odavn")

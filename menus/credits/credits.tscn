@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b5wune0k0xevy"]
+
+[ext_resource type="Script" uid="uid://b4x2xxsiqf3up" path="res://menus/credits/credits.gd" id="1_32j7k"]
+[ext_resource type="PackedScene" uid="uid://cddv5mlk0afcs" path="res://ui/startbackground/startbackground.tscn" id="1_v1kn4"]
+[ext_resource type="FontFile" uid="uid://dng0gakhvt5oo" path="res://ui/friz-quadrata.ttf" id="3_v68ex"]
+[ext_resource type="FontFile" uid="uid://cx1vrqypkumxx" path="res://ui/sina_nova.ttf" id="4_rl7hp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl7hp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v68ex"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32j7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1kn4"]
+
+[node name="Credits" type="Control" unique_id=2094997944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_32j7k")
+
+[node name="StartBackground" parent="." unique_id=1051410655 instance=ExtResource("1_v1kn4")]
+layout_mode = 1
+
+[node name="MenuButton" type="Button" parent="." unique_id=1876553415]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_v68ex")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rl7hp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v68ex")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_32j7k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v1kn4")
+text = "Back To Main Menu"
+alignment = 2
+
+[node name="TALEACredits" type="Label" parent="." unique_id=1657998391]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 85.0
+offset_right = 516.0
+offset_bottom = 489.0
+theme_override_fonts/font = ExtResource("4_rl7hp")
+theme_override_font_sizes/font_size = 26
+text = "Features performances from the TALEA Ensemble:
+Conductor:  James Baker
+Flute:  Barry Crawford
+Bass Clarinet:  Rane Moore
+Bassoon:  Adrian Morejon
+Piano:  David Friend
+Violin:  Miho Saegusa
+Viola:  Noriko Futagami
+Cello:  Chris Gross
+Live sound recording by Edwin Huet
+Additional help from Vicki Leona "
+horizontal_alignment = 1
+
+[node name="CreditMyself" type="Label" parent="." unique_id=2120732452]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 578.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("3_v68ex")
+theme_override_font_sizes/font_size = 30
+text = "Composed, Produced, and Programmed 
+by Dylan Needleman"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
