@@ -59,12 +59,10 @@ func _ready() -> void:
 	var rand = randi() % 8
 	position = Vector3(24*cos(TAU * rand / 8),0,24*sin(TAU * rand / 8))
 	rotation.y = PI/2 - (PI/4 * rand)
-	print("Initializing Player at the {0} Corner now".format([Global.instruments[rand]]))
+	print("Initializing Player at the {0} Corner".format([Global.instruments[rand]]))
 	check_input_mappings()
-	print("Check input mappings complete")
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
-	print("rotations set, controller ready end")
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Mouse capturing

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://wgsoj075cb34"]
+
+[ext_resource type="Script" uid="uid://d0pkiosxa052c" path="res://menus/programnotes/programnotes.gd" id="1_ugok7"]
+[ext_resource type="PackedScene" uid="uid://cddv5mlk0afcs" path="res://ui/startbackground/startbackground.tscn" id="2_p6mm3"]
+[ext_resource type="FontFile" uid="uid://dng0gakhvt5oo" path="res://ui/friz-quadrata.ttf" id="3_wxnlq"]
+[ext_resource type="FontFile" uid="uid://cx1vrqypkumxx" path="res://ui/sina_nova.ttf" id="4_l2oft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjvuk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3gmi3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2wao"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_26a4a"]
+
+[node name="Control" type="Control" unique_id=749600776]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ugok7")
+
+[node name="StartBackground" parent="." unique_id=664591744 instance=ExtResource("2_p6mm3")]
+layout_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2106497515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3137255)
+
+[node name="MenuButton" type="Button" parent="." unique_id=914117015]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_wxnlq")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fjvuk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3gmi3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q2wao")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_26a4a")
+text = "Back To Main Menu"
+alignment = 2
+
+[node name="Program Notes" type="Label" parent="." unique_id=1690323948]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -379.5
+offset_top = 143.0
+offset_right = 379.5
+offset_bottom = 459.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_l2oft")
+theme_override_font_sizes/font_size = 20
+text = "        All//One is a continuous sound installation that is meant to be explored. There is no start or end to this installaton, and where you enter depends on when you enter.
+        All//One started its life as The All Is One: a chamber piece written for the TALEA Ensemble and premiered in April 2025 at Slosberg Recital Hall in Waltham, MA. The piece was based on the spectral analyses of an older electronic improvisation created through feedback through a pedalboard. To create this virtual installation, the original electronic audio was stretched and retimed to be in time with the recording of The All Is One. Then that retimed electronic improvisation, and each of the seven instruments for The All Is One were stretched using the Paul Stretch algorithm to four times their original length. Each of these 8 channels is then placed at a corner of the octagonal structure, so each individual voice can be focused on, even as each voice interacts with the others, both near and far (though those to a lesser extent)."
+autowrap_mode = 3
+
+[node name="TaleaByline" type="Label" parent="." unique_id=823483040]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 109.0
+offset_right = 322.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wxnlq")
+theme_override_font_sizes/font_size = 24
+text = "with performances from the TALEA Ensemble"
+horizontal_alignment = 1
+
+[node name="Byline" type="Label" parent="." unique_id=985238298]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.5
+offset_top = 74.0
+offset_right = 286.5
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wxnlq")
+theme_override_font_sizes/font_size = 30
+text = "by Dylan Needleman"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=1213414247]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.5
+offset_top = 8.0
+offset_right = 286.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_wxnlq")
+theme_override_font_sizes/font_size = 60
+text = "All//One"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

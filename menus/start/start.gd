@@ -2,6 +2,12 @@ extends Control
 
 func _ready():
 	$MarginContainer/ButtonsContainer/StartButton.grab_focus()
+	
+	if not ProjectSettings.load_resource_pack("res://music1.pck"): print("Failed to load Music1")
+	if not ProjectSettings.load_resource_pack("res://music2.pck"): print("Failed to load Music2")
+	if not ProjectSettings.load_resource_pack("res://music3.pck"): print("Failed to load Music3")
+	if not ProjectSettings.load_resource_pack("res://music4.pck"): print("Failed to load Music4")
+	if not ProjectSettings.load_resource_pack("res://music5.pck"): print("Failed to load Music5")
 
 func _on_resized() -> void:
 	var viewport_size = get_viewport_rect().size
@@ -39,3 +45,6 @@ func _on_credits_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://menus/credits/credits.tscn")
 
 func _on_quit_button_pressed() -> void: get_tree().quit()
+
+func _on_program_notes_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/programnotes/programnotes.tscn")

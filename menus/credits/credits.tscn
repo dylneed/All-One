@@ -25,6 +25,15 @@ script = ExtResource("1_32j7k")
 [node name="StartBackground" parent="." unique_id=1051410655 instance=ExtResource("1_v1kn4")]
 layout_mode = 1
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2084384666]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23529412)
+
 [node name="MenuButton" type="Button" parent="." unique_id=1876553415]
 layout_mode = 1
 anchors_preset = 3
@@ -54,11 +63,15 @@ text = "Back To Main Menu"
 alignment = 2
 
 [node name="TALEACredits" type="Label" parent="." unique_id=1657998391]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 85.0
-offset_right = 516.0
-offset_bottom = 489.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.0
+offset_top = 90.0
+offset_right = 254.0
+offset_bottom = 494.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_rl7hp")
 theme_override_font_sizes/font_size = 26
 text = "Features performances from the TALEA Ensemble:
@@ -75,11 +88,15 @@ Additional help from Vicki Leona "
 horizontal_alignment = 1
 
 [node name="CreditMyself" type="Label" parent="." unique_id=2120732452]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 7.0
-offset_right = 578.0
-offset_bottom = 68.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.5
+offset_top = 12.0
+offset_right = 286.5
+offset_bottom = 73.0
+grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_v68ex")
 theme_override_font_sizes/font_size = 30
 text = "Composed, Produced, and Programmed 

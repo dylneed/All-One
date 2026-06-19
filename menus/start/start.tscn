@@ -80,7 +80,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_3u0aj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_v13q4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xclbe")
-text = "Start"
+text = "Enter"
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=1211737232]
@@ -100,6 +100,24 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_v13q4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xclbe")
 text = "Options"
+alignment = 0
+
+[node name="ProgramNotesButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=2064000814]
+layout_mode = 2
+focus_neighbor_top = NodePath("../OptionsButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme_override_colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.686275, 1)
+theme_override_colors/font_hover_color = Color(0.713726, 0.713726, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.0588235, 0, 0.00784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_blcey")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e1ikm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_viqgv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2wtlv")
+text = "Program Notes"
 alignment = 0
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=567433926]
@@ -122,6 +140,7 @@ text = "Credits
 alignment = 0
 
 [node name="QuitButton" type="Button" parent="MarginContainer/ButtonsContainer" unique_id=1968366859]
+visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../CreditsButton")
 focus_neighbor_bottom = NodePath("../StartButton")
@@ -142,5 +161,6 @@ alignment = 0
 [connection signal="resized" from="." to="." method="_on_resized"]
 [connection signal="pressed" from="MarginContainer/ButtonsContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/ProgramNotesButton" to="." method="_on_program_notes_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]
